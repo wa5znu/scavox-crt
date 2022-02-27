@@ -10,14 +10,20 @@
 
 Adafruit_NTSC40x24 display; // NTSC 40x24 currently the only supported type
 
+extern int get_pi_hex_digit(int id, char *chx);
+
 void setup() {
   if(!display.begin()) for(;;);   // Initialize display; halt on failure
-}
-
-void loop() {
   display.fillScreen(0);          // Clear display
   display.setCursor(4, 4);        // Inset slightly to avoid overscan area
-  display.print(currentTimeMillis());
-  delay(100);                     // Wait 1/10 sec
+  printf("3.");
 }
 
+int idx = 0;
+
+void loop() {
+  char chx[16];
+  get_pi_hex_digit(idx, chx);
+  display.printf("%s", chx);
+  delay(100);                     // Wait 1/10 sec
+}
