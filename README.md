@@ -4,6 +4,10 @@
 
 SCAVOX = Sony Crt, Adafruit Video Out, Xiao
 
+## Status
+
+- Display worked with Adafruit tutorial, but adding Pi code caused it to fail to boot. Stopped and moved to Python and RPi 3, for now.  See Issues list.
+
 # References
 - https://learn.adafruit.com/circuit-playground-express-dac-hacks/composite-video?view=all Adafruit library for video out on Cortex M0+
 
